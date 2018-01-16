@@ -1,0 +1,5 @@
+<h2>Edit Bid</h2>
+
+<%= render "form.html", Map.put(assigns, :action, bid_path(@conn, :update, @bid)) %>
+
+<span><%= link "Back", to: bid_path(@conn, :index) %></span>

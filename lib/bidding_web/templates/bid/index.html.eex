@@ -1,0 +1,40 @@
+
+
+
+
+ <h2>Listing Bids</h2>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Starting</th>
+                <th>Ending</th>
+                <th>Winner</th>
+
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+
+          <%= for bid <- @bids do %>
+              <tr id="<%= bid.product_id %>">
+                <td><%= bid.product_id %></td>
+                <td><%= bid.price %></td>
+                <td><%= bid.starting %></td>
+                <td><%= bid.ending %></td>
+                <td><%= bid.winner %></td>
+
+                <td class="text-right">
+                  <span><%= link "Show", to: bid_path(@conn, :show, bid), class: "btn btn-default btn-xs" %></span>
+                  <span><%= link "Edit", to: bid_path(@conn, :edit, bid), class: "btn btn-default btn-xs" %></span>
+                  <span><%= link "Delete", to: bid_path(@conn, :delete, bid), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                </td>
+              </tr>
+          <% end %>
+            </tbody>
+          </table>
+
+          <span><%= link "New Bid", to: bid_path(@conn, :new) %></span>
+<%= button("warning") %>

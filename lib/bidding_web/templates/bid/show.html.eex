@@ -1,0 +1,33 @@
+<h2>Show Bid</h2>
+
+<ul>
+
+  <li>
+    <strong>Product:</strong>
+    <%= @bid.product_id %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @bid.price %>
+  </li>
+
+  <li>
+    <strong>Starting:</strong>
+    <%= @bid.starting %>
+  </li>
+
+  <li>
+    <strong>Ending:</strong>
+    <%= @bid.ending %>
+  </li>
+
+  <li>
+    <strong>Winner:</strong>
+    <%= @bid.winner %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: bid_path(@conn, :edit, @bid) %></span>
+<span><%= link "Back", to: bid_path(@conn, :index) %></span>
